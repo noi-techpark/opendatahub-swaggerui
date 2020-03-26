@@ -1,0 +1,12 @@
+version: "3.4"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/code
+    env_file: .env
+    tty: true
+    ports:
+      - 8999:8080
