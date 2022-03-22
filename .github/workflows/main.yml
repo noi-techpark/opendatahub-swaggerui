@@ -55,12 +55,12 @@ jobs:
           X_DOC_EXPANSION: "none"
           X_DISPLAY_REQUEST_DURATION: true
 
-        - name: Build and push 
-          uses: noi-techpark/github-actions/docker-build-and-push@v2
-          with:
-            docker-host: ${{ env.DOCKER_REGISTRY_HOST }}
-            docker-username: ${{ github.actor }}
-            docker-password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push 
+        uses: noi-techpark/github-actions/docker-build-and-push@v2
+        with:
+          docker-host: ${{ env.DOCKER_REGISTRY_HOST }}
+          docker-username: ${{ github.actor }}
+          docker-password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy application
         uses: noi-techpark/github-actions/docker-deploy@v2
