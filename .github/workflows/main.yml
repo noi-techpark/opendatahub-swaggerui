@@ -44,23 +44,23 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-    - name: Create .env file
-      uses: noi-techpark/github-actions/env-file@v2
-      env:
-        X_DOCKER_PROJECT_NAME: ${{ env.PROJECT_NAME }}
-        X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
-        X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
-        X_SERVER_PORT: ${{ env.SERVER_PORT }}
-        X_SWAGGER_JSON: "/code/default.yml"
-        X_DOC_EXPANSION: "none"
-        X_DISPLAY_REQUEST_DURATION: true
+      - name: Create .env file
+        uses: noi-techpark/github-actions/env-file@v2
+        env:
+          X_DOCKER_PROJECT_NAME: ${{ env.PROJECT_NAME }}
+          X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
+          X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
+          X_SERVER_PORT: ${{ env.SERVER_PORT }}
+          X_SWAGGER_JSON: "/code/default.yml"
+          X_DOC_EXPANSION: "none"
+          X_DISPLAY_REQUEST_DURATION: true
 
-      - name: Build and push 
-        uses: noi-techpark/github-actions/docker-build-and-push@v2
-        with:
-          docker-host: ${{ env.DOCKER_REGISTRY_HOST }}
-          docker-username: ${{ github.actor }}
-          docker-password: ${{ secrets.GITHUB_TOKEN }}
+        - name: Build and push 
+          uses: noi-techpark/github-actions/docker-build-and-push@v2
+          with:
+            docker-host: ${{ env.DOCKER_REGISTRY_HOST }}
+            docker-username: ${{ github.actor }}
+            docker-password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy application
         uses: noi-techpark/github-actions/docker-deploy@v2
@@ -81,16 +81,16 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v2
 
-    - name: Create .env file
-      uses: noi-techpark/github-actions/env-file@v2
-      env:
-        X_DOCKER_PROJECT_NAME: ${{ env.PROJECT_NAME }}
-        X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
-        X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
-        X_SERVER_PORT: ${{ env.SERVER_PORT }}
-        X_SWAGGER_JSON: "/code/default.yml"
-        X_DOC_EXPANSION: "none"
-        X_DISPLAY_REQUEST_DURATION: true
+      - name: Create .env file
+        uses: noi-techpark/github-actions/env-file@v2
+        env:
+          X_DOCKER_PROJECT_NAME: ${{ env.PROJECT_NAME }}
+          X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
+          X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
+          X_SERVER_PORT: ${{ env.SERVER_PORT }}
+          X_SWAGGER_JSON: "/code/default.yml"
+          X_DOC_EXPANSION: "none"
+          X_DISPLAY_REQUEST_DURATION: true
 
       - name: Build and push 
         uses: noi-techpark/github-actions/docker-build-and-push@v2
