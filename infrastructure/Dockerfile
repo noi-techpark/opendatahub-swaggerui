@@ -1,4 +1,5 @@
-FROM swaggerapi/swagger-ui:3.18 as base
+FROM swaggerapi/swagger-ui:3.18.2 as base
+
 
 
 # BUILD stage #################################################################
