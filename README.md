@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: NOI Techpark <digital@noi.bz.it>
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
 # Open Data Hub swaggerui
 
 A simple docker container running swagger for the Open Data Hub API available on [swagger.opendatahub.bz.it](https://swagger.opendatahub.bz.it/)
