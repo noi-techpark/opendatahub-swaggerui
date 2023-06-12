@@ -3,6 +3,6 @@ Upstream-Name: odh-swaggerui
 Upstream-Contact: NOI Techpark <digital@noi.bz.it>
 Source: https://github.com/noi-techpark/odh-swaggerui
 
-Files: .github/* infrastructure/* .editorconfig .env.example
+Files: .github/* infrastructure/* .pre-commit-config.yaml .editorconfig .env.example
 Copyright: (c) NOI Techpark <digital@noi.bz.it>
 License: CC0-1.0
