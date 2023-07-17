@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC0-1.0
 
 A simple docker container running swagger for the Open Data Hub API available on [swagger.opendatahub.com](https://swagger.opendatahub.com/)
 
-![REUSE Compliance](https://github.com/noi-techpark/odh-swaggerui/actions/workflows/reuse.yml/badge.svg)
+[![REUSE Compliance](https://github.com/noi-techpark/odh-swaggerui/actions/workflows/reuse.yml/badge.svg)](https://github.com/noi-techpark/odh-docs/wiki/REUSE#badges)
 [![CI/CD](https://github.com/noi-techpark/odh-swaggerui/actions/workflows/main.yml/badge.svg)](https://github.com/noi-techpark/odh-swaggerui/actions/workflows/main.yml)
 
 ### Fixed version 4.1.2
