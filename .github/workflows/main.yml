@@ -39,7 +39,7 @@ jobs:
       run: docker-compose -f infrastructure/docker-compose.build.yml down || true
 
   deploy-test:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/main'
     needs: test
     concurrency: deploy-test
@@ -57,6 +57,7 @@ jobs:
           X_SWAGGER_JSON: "/code/default.yml"
           X_DOC_EXPANSION: "list"
           X_DISPLAY_REQUEST_DURATION: true
+          X_QUERY_CONFIG_ENABLED: true
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
@@ -74,7 +75,7 @@ jobs:
           project-name: ${{ env.PROJECT_NAME }}
 
   deploy-prod:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     if: github.ref == 'refs/heads/prod'
     needs: test
     concurrency: deploy-prod
@@ -90,7 +91,7 @@ jobs:
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: ${{ env.SERVER_PORT }}
           X_SWAGGER_JSON: "/code/default.yml"
-          X_DOC_EXPANSION: "none"
+          X_DOC_EXPANSION: "list"
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
 
