@@ -4,15 +4,17 @@
 
 openapi: 3.0.0
 info:
-  title: Open Data Hub Central Swagger
+  title: Open Data Hub Swagger
   description: |
-    <div style="text-align: center; border: 3px solid black; padding: 20px; margin-bottom: 40px">
-      To use this Swagger instance, just add <code>?url=https://link-to-your-spec</code>
-      to the URL above. You can use Swagger and OpenAPI specifications.
-    </div>
+    Welcome to the Open Data Hub Swagger instance.
+
+    This is just a landing page. To check out the APIs, start by selecting a definition on the top right.
+    
+    [More information on the APIs](https://api.opendatahub.com)
+    
   contact:
     name: Open Data Hub
     url: https://opendatahub.com
     email: help@opendatahub.com
-  version: "X"
+  version: ""
 paths: {}

@@ -1,8 +1,6 @@
-FROM swaggerapi/swagger-ui:v5.22.0 as base
-
-
+FROM swaggerapi/swagger-ui:v5.22.0 AS base
 
 # BUILD stage #################################################################
-FROM base as build
+FROM base AS build
 
-COPY default.yml /code/
+COPY default.yml /usr/share/nginx/html/opendatahub.yml

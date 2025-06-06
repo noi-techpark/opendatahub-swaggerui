@@ -60,6 +60,16 @@ jobs:
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
+          X_URLS:  >
+            [
+            {name:"Welcome - select an API to get started", url:"/opendatahub.yml"},
+            {name:"Timeseries - mobility.api.opendatahub.testingmachine.eu",url: "https://mobility.api.opendatahub.testingmachine.eu/v2/apispec"},
+            {name:"Content - api.tourism.opendatahub.testingmachine.eu",url: "https://api.tourism.opendatahub.testingmachine.eu/swagger/v1/swagger.json"},
+            {name:"NeTEx & Siri - transmodel.api.opendatahub.testingmachine.eu",url: "https://transmodel.api.opendatahub.com/apispec"},
+            {name:"AlpineBits Destination - destinationdata.alpinebits.opendatahub.com",url: "https://destinationdata.alpinebits.opendatahub.com/specification.json"},
+            {name:"GTFS - gtfs.api.opendatahub.testingmachine.eu",url: "https://gtfs.api.opendatahub.testingmachine.eu/v1/apispec"},
+            {name:"GBFS - gtfs.api.opendatahub.testingmachine.eu",url: "https://gbfs.api.opendatahub.testingmachine.eu/v1/apispec"},
+            ]'
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
@@ -97,6 +107,16 @@ jobs:
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
+          X_URLS:  >
+            [
+            {name:"Welcome - select an API to get started", url:"/opendatahub.yml"},
+            {name:"Timeseries - mobility.api.opendatahub.com",url: "https://mobility.api.opendatahub.com/v2/apispec"},
+            {name:"Content - tourism.api.opendatahub.com",url: "https://tourism.api.opendatahub.com/swagger/v1/swagger.json"},
+            {name:"NeTEx & Siri - transmodel.api.opendatahub.com",url: "https://transmodel.api.opendatahub.com/apispec"},
+            {name:"AlpineBits Destination - destinationdata.alpinebits.opendatahub.com",url: "https://destinationdata.alpinebits.opendatahub.com/specification.json"},
+            {name:"GTFS - gtfs.api.opendatahub.com",url: "https://gtfs.api.opendatahub.com/v1/apispec"},
+            {name:"GBFS - gtfs.api.opendatahub.com",url: "https://gbfs.api.opendatahub.com/v1/apispec"},
+            ]'
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
