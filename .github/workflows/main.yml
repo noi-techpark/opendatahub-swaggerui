@@ -69,7 +69,7 @@ jobs:
             {name:"AlpineBits Destination - destinationdata.alpinebits.opendatahub.com",url: "https://destinationdata.alpinebits.opendatahub.com/specification.json"},
             {name:"GTFS - gtfs.api.opendatahub.testingmachine.eu",url: "https://gtfs.api.opendatahub.testingmachine.eu/v1/apispec"},
             {name:"GBFS - gtfs.api.opendatahub.testingmachine.eu",url: "https://gbfs.api.opendatahub.testingmachine.eu/v1/apispec"},
-            ]'
+            ]
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
@@ -116,7 +116,7 @@ jobs:
             {name:"AlpineBits Destination - destinationdata.alpinebits.opendatahub.com",url: "https://destinationdata.alpinebits.opendatahub.com/specification.json"},
             {name:"GTFS - gtfs.api.opendatahub.com",url: "https://gtfs.api.opendatahub.com/v1/apispec"},
             {name:"GBFS - gtfs.api.opendatahub.com",url: "https://gbfs.api.opendatahub.com/v1/apispec"},
-            ]'
+            ]
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
