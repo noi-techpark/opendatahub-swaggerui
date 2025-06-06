@@ -34,10 +34,10 @@ jobs:
         X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
     - name: Build docker container
-      run: docker-compose -f infrastructure/docker-compose.build.yml build
+      run: docker compose -f infrastructure/docker-compose.build.yml build
 
     - name: Shut down docker container
-      run: docker-compose -f infrastructure/docker-compose.build.yml down || true
+      run: docker compose -f infrastructure/docker-compose.build.yml down || true
 
   deploy-test:
     runs-on: ubuntu-22.04
