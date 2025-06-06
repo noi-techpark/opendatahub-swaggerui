@@ -31,6 +31,7 @@ jobs:
         X_DOC_EXPANSION: "list"
         X_DISPLAY_REQUEST_DURATION: true
         X_QUERY_CONFIG_ENABLED: true
+        X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
     - name: Build docker container
       run: docker-compose -f infrastructure/docker-compose.build.yml build
@@ -58,6 +59,7 @@ jobs:
           X_DOC_EXPANSION: "list"
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
+          X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
@@ -94,6 +96,7 @@ jobs:
           X_DOC_EXPANSION: "list"
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
+          X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
