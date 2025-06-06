@@ -1,4 +1,4 @@
-FROM swaggerapi/swagger-ui:v5.17.14 as base
+FROM swaggerapi/swagger-ui:v5.22.0 as base
 
 
 
