@@ -54,7 +54,7 @@ jobs:
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: ${{ env.SERVER_PORT }}
-          X_CONFIG_URL: config.test.json
+          X_CONFIG_URL: /config.test.json
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
       - name: Build and push
@@ -88,7 +88,7 @@ jobs:
           X_DOCKER_IMAGE: ${{ env.DOCKER_IMAGE }}
           X_DOCKER_TAG: ${{ env.DOCKER_TAG }}
           X_SERVER_PORT: ${{ env.SERVER_PORT }}
-          X_CONFIG_URL: config.prod.json
+          X_CONFIG_URL: /config.prod.json
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
 
       - name: Build and push
