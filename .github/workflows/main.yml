@@ -45,7 +45,6 @@ jobs:
     concurrency: deploy-test
     env:
       API_URLS_FILE: urls.test.json
-      API_URLS: "" # overwritten from bash with content of urls.<env>.json file
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
@@ -55,6 +54,7 @@ jobs:
           echo 'API_URLS<<EOF' >> $GITHUB_ENV
           cat ${{ env.API_URLS_FILE }} >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
+          echo $GITHUB_ENV
 
       - name: Create .env file
         uses: noi-techpark/github-actions/env-file@v2
