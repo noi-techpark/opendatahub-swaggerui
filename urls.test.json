@@ -1,0 +1,9 @@
+[
+{"name":"Welcome - select an API to get started", "url":"/opendatahub.yml"},
+{"name":"Timeseries - mobility.api.opendatahub.testingmachine.eu","url": "https://mobility.api.opendatahub.testingmachine.eu/v2/apispec"},
+{"name":"Content - api.tourism.testingmachine.eu","url": "https://api.tourism.testingmachine.eu/swagger/v1/swagger.json"},
+{"name":"NeTEx & Siri - transmodel.api.opendatahub.testingmachine.eu","url": "https://transmodel.api.opendatahub.testingmachine.eu/apispec"},
+{"name":"AlpineBits Destination - destinationdata.alpinebits.opendatahub.com","url": "https://destinationdata.alpinebits.opendatahub.testingmachine.eu/specification.json"},
+{"name":"GTFS - gtfs.api.opendatahub.testingmachine.eu","url": "https://gtfs.api.opendatahub.testingmachine.eu/v1/apispec"},
+{"name":"GBFS - gtfs.api.opendatahub.testingmachine.eu","url": "https://gbfs.api.opendatahub.testingmachine.eu/v1/apispec"}
+]
