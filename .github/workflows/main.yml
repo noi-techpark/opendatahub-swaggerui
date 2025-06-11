@@ -44,13 +44,17 @@ jobs:
     needs: test
     concurrency: deploy-test
     env:
+      API_URLS_FILE: urls.test.json
       API_URLS: "" # overwritten from bash with content of urls.<env>.json file
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
         
       - name: Load api urls as env variable
-        run: echo "API_URLS=$(<urls.test.json)" >> "$GITHUB_ENV"
+        run: |
+          echo 'API_URLS<<EOF' >> $GITHUB_ENV
+          cat ${{ env.API_URLS_FILE }} >> $GITHUB_ENV
+          echo 'EOF' >> $GITHUB_ENV
 
       - name: Create .env file
         uses: noi-techpark/github-actions/env-file@v2
@@ -64,7 +68,7 @@ jobs:
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
-          X_URLS:  '${{ env.API_URLS }}'
+          X_URLS:  "${{ env.API_URLS }}"
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
