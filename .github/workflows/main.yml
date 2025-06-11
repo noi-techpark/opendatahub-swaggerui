@@ -51,10 +51,11 @@ jobs:
         
       - name: Load api urls as env variable
         run: |
-          echo 'API_URLS<<EOF' >> $GITHUB_ENV
-          cat ${{ env.API_URLS_FILE }} >> $GITHUB_ENV
-          echo 'EOF' >> $GITHUB_ENV
-          echo $GITHUB_ENV
+          {
+            echo 'API_URLS<<EOF'
+            cat ${{ env.API_URLS_FILE }}
+            echo EOF
+          } >> $GITHUB_ENV
 
       - name: Create .env file
         uses: noi-techpark/github-actions/env-file@v2
