@@ -64,7 +64,7 @@ jobs:
           X_DISPLAY_REQUEST_DURATION: true
           X_QUERY_CONFIG_ENABLED: true
           X_OAUTH_CLIENT_ID: "opendatahub-swagger"
-          X_URLS:  ${{ env.API_URLS }}
+          X_URLS:  '${{ env.API_URLS }}'
 
       - name: Build and push
         uses: noi-techpark/github-actions/docker-build-and-push@v2
