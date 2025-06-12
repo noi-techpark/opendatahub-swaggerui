@@ -22,14 +22,14 @@ TMP=$(mktemp)
 # Iterate over config urls entries and create nginx rewrite sections
 jq -c '.urls[]' $INPUT_JSON | tac | while read entry; do
     NAME=`echo $entry | jq -rc '.name'`
-    # swagger replaces spaces in names with + characters
-    NAME=$(echo "$NAME" | sed "s/ /+/g" )
+    # swagger uses urlencode, but with the '+' for spaces instead of %20
+    NAME=$(echo -n "$NAME" | jq -s -R -r @uri | sed 's/%20/+/g' )
 
     URL=`echo $entry | jq -rc '.url'`
     
     cat <<EOF >>$TMP
-      if (\$arg_url = "$URL" ) {
-        rewrite ^ /?urls.primaryName=$NAME? permanent;
+      if (\$arg_url ~* '$URL([/#].*)?' ) {
+        rewrite ^ /?urls.primaryName=$NAME?$1 permanent;
       }
 EOF
 
