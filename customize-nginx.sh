@@ -19,6 +19,12 @@ INPUT_JSON="${NGINX_ROOT}${CONFIG_URL}"
 
 TMP=$(mktemp)
 
+cat <<"EOF" >> $TMP
+map_hash_bucket_size 256;
+# map old style url= to urls.primaryName format
+map $arg_url $remap {
+EOF
+
 # Iterate over config urls entries and create nginx rewrite sections
 jq -c '.urls[]' $INPUT_JSON | tac | while read entry; do
     NAME=`echo $entry | jq -rc '.name'`
@@ -27,14 +33,27 @@ jq -c '.urls[]' $INPUT_JSON | tac | while read entry; do
 
     URL=`echo $entry | jq -rc '.url'`
     
-    cat <<EOF >>$TMP
-      if (\$arg_url ~* '$URL([/#].*)?' ) {
-        rewrite ^ /?urls.primaryName=$NAME?$1 permanent;
-      }
-EOF
-
+    echo "\"$URL\" \"$NAME\";" >> $TMP
 done
 
+echo 'default 0;' >> $TMP
+echo '}' >> $TMP
+
+# insert at start of file
+cat $TMP $NGINX_CONF > $NGINX_CONF.tmp && mv $NGINX_CONF.tmp $NGINX_CONF
+
+# zero out temp file
+cat /dev/null > $TMP
+
+cat <<"EOF" >> $TMP
+if ($remap) {
+  rewrite ^ /?urls.primaryName=$remap? permanent;
+}
+EOF
+
+# insert tmp file content right below the alias directive
 sed -i "/alias/r$TMP" $NGINX_CONF
+
+cat $NGINX_CONF
 
 rm $TMP
